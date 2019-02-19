@@ -1,0 +1,7 @@
+export enum ApiErrorCode {
+  SUCCESS = 0,
+  TOKEN_INVALID = 10000,
+  USER_ID_INVALID = 20000,
+
+  API_BAD_GATEWAY = 50000
+}
