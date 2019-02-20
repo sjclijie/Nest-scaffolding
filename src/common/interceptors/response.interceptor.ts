@@ -9,11 +9,14 @@ import * as moment from 'moment';
 @Injectable()
 export class ResponseInterceptor<T> implements NestInterceptor<T, Response<T>> {
   intercept(context: ExecutionContext, call$: Observable<T>): Observable<Response<T>> | Promise<Observable<Response<T>>> {
+
+    console.log(4);
+
     return call$.pipe(map(data => ({
       code: 0,
       data,
       message: 'success',
       timestamp: Number(moment().format('X')),
-    }))/*, catchError(err => throwError(new ApiException('操作失败', ApiErrorCode.API_BAD_GATEWAY, 200)))*/);
+    })));
   }
 }
